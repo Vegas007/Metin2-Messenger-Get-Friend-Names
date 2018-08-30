@@ -4,10 +4,9 @@
 		{ "GetFriendNames",				messengerGetFriendNames,			METH_VARARGS },
 
 //1.2 Search for:
-PyObject * messengerRefreshGuildMember(PyObject* poSelf, PyObject* poArgs)
+void CPythonMessenger::SetMessengerHandler(PyObject* poHandler)
 {
-	CPythonMessenger::Instance().RefreshGuildMember();
-	return Py_BuildNone();
+	m_poMessengerHandler = poHandler;
 }
 //1.2 Add after:
 const CPythonMessenger::TFriendNameMap CPythonMessenger::GetFriendNames()
