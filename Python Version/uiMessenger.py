@@ -2,5 +2,5 @@
 	def GetLogoutMemberList(self):
 		return filter(lambda arg: not arg.IsOnline(), self.memberList)
 #1.1 Add after:
-	def GetFriendNames(self):
+	def GetMemberList(self):
 		return self.memberList
