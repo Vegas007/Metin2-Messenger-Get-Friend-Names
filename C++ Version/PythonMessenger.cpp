@@ -27,7 +27,7 @@ PyObject* messengerGetFriendNames(PyObject* poSelf, PyObject* poArgs)
 	PyObject * pyTupleFriendNames = PyTuple_New(friendNameMap.size());
 
 	int iPos = 0;
-	for (CPythonMessenger::TFriendNameMap::iterator itor = friendNameMap.begin(); itor != friendNameMap.end(); ++itor, ++iPos)
+	for (CPythonMessenger::TFriendNameMap::const_iterator itor = friendNameMap.begin(); itor != friendNameMap.end(); ++itor, ++iPos)
 		PyTuple_SetItem(pyTupleFriendNames, iPos, Py_BuildValue("s", (*itor).c_str()));
 
 	return pyTupleFriendNames;
